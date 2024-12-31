@@ -143,6 +143,7 @@
               </div>
               <div class="card-body">
                 <form role="form" class="text-start" method="POST" action="{{ route('login') }}">
+                  @csrf
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Email</label>
                     <input type="email" id="email" name="email" class="form-control" required :value="old('email')" required autofocus autocomplete="username">
@@ -158,7 +159,7 @@
                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign in</button>
+                    <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign in</button>
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?
