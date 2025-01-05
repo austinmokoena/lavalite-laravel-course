@@ -23,6 +23,7 @@
     <p>In Laravel, the folder structure is designed to help you organize your application code efficiently. Understanding this structure will make it easier for you to work with Laravel and locate your files when needed.</p>
 
     <h4>1. Root Folder</h4>
+    <img src="/assets/img/root.png" style="width: 600px" alt="laravel root folder">
     <ul>
         <li><span class="file"><b>artisan:</b></span> The command-line tool for running Artisan commands. This file allows you to run tasks such as generating controllers, running migrations, and more.</li>
         <li><span class="file"><b>composer.json:</b></span> This file contains the dependencies and packages required for the application to run.</li>

@@ -102,28 +102,31 @@
         </div>
         <!-- Course starts here -->
 
+        
+
         <p>To start coding in Laravel, you need to set up your development environment step by step. Here's a comprehensive guide:</p>
-
-        <li>
-            <b>Install XAMPP</b><br>
-            XAMPP provides a local web server with PHP, MySQL, and Apache. <br><br>
-
-            Download XAMPP: Visit the official <a href="apachefriends.org" style="color: blue;">XAMPP website</a> and download the version compatible with your system.
-            Install XAMPP: Follow the installation instructions. During setup, ensure PHP and MySQL are selected.
-            Start Apache and MySQL: Open the XAMPP Control Panel and start the Apache and MySQL services.
-        </li>
-        <li>
-            <b>Install Composer</b> <br>
-            Composer is a PHP dependency manager, essential for Laravel. <br><br>
-
-            Download Composer: Visit Composer's <a href="getcomposer.org" style="color: blue;">official website.</a>
-            Install Composer:
-            Run the installer and ensure php.exe from your XAMPP installation is selected (e.g., C:\xampp\php\php.exe).
-            Verify installation by running the following command in your terminal:
-            bash
-            Copy code
-
-        </li>
+        <p>Before creating your first Laravel application, make sure that your local machine has <span style="color: rgb(255, 0, 128);">PHP, Composer</span>, and the Laravel installer installed (optional). In addition, 
+          you should install either <span style="color: rgb(255, 0, 128);">Node and NPM or Bun</span> so that you can compile your application's frontend assets.</p>
+          <ul style="list-style: none; padding-left: 20px;">
+            <li style="position: relative; padding-left: 15px;">
+                <span style="color: red; font-weight: bold; position: absolute; left: 0; font-size: 1.2em;">*</span>
+                <b>Install XAMPP</b><br>
+                XAMPP provides a local web server with PHP, MySQL, and Apache. <br><br>
+                Download XAMPP: Visit the official <a href="https://www.apachefriends.org" style="color: blue;">XAMPP website</a> and download the version compatible with your system.<br>
+                Install XAMPP: Follow the installation instructions. During setup, ensure PHP and MySQL are selected.<br>
+                Start Apache and MySQL: Open the XAMPP Control Panel and start the Apache and MySQL services.
+            </li>
+            <li style="position: relative; padding-left: 15px;">
+                <span style="color: red; font-weight: bold; position: absolute; left: 0; font-size: 1.2em;">*</span>
+                <b>Install Composer</b> <br>
+                Composer is a PHP dependency manager, essential for Laravel. <br><br>
+                Download Composer: Visit Composer's <a href="https://getcomposer.org" style="color: blue;">official website</a>.<br>
+                Install Composer:<br>
+                Run the installer and ensure php.exe from your XAMPP installation is selected (e.g., C:\xampp\php\php.exe).<br>
+                Verify installation by running the following command in your terminal:
+            </li>
+        </ul>
+        
         
 
         @php
@@ -170,9 +173,13 @@ DB_PASSWORD=
             @endphp
             <x-code-snippet language="php" :code="$phpCode1" />
             <b>Create the database in phpMyAdmin:</b><br>
-                after launching xampp and starting Apache and MySQL servers
-            Visit http://localhost/phpmyadmin
-            Create a new database matching the name in DB_DATABASE.
+                after launching xampp and starting Apache and MySQL servers, run the following command to create your applications database:
+                @php
+                $phpCode1 = "php artisan migrate";
+            @endphp
+            <x-code-snippet language="php" :code="$phpCode1" />
+                Laravel 11 has an added feature which will create the database for you from the terminal. <br>
+                Then Visit http://localhost/phpmyadmin to check the newly created database matching the name in DB_DATABASE in your .env file.
         </li><br><br>
 
         <li>
@@ -193,7 +200,7 @@ DB_PASSWORD=
 
 
         <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-            <a href="{{ route('laravel-databse') }}" class="btn" style="border:solid 1px black; padding: 10px 20px;">
+            <a href="{{ route('laravel-database') }}" class="btn" style="border:solid 1px black; padding: 10px 20px;">
                 Database integration 
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
                     <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>

@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\VideoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,7 +19,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Admin Routes here
 Route::get('admin/dashboard' ,[HomeController::class,'index'])->middleware(['auth','admin']);
+Route::get('admin/videos' ,[HomeController::class,'videosAdmin'])->middleware(['auth','admin'])->name('videos');
+Route::get('admin/upload' ,[HomeController::class,'videosUpload'])->middleware(['auth','admin'])->name('upload');
+Route::get('upload', [VideoController::class, 'create'])->name('admin.videos.create');
+Route::post('upload', [VideoController::class, 'store'])->name('admin.videos.store');
+
+
+
+// End of Admin Routes
 
 Route::get('/tables', function () {
     return view('tables');
@@ -54,6 +64,10 @@ Route::get('/laravel-database', function () {
 Route::get('/laravel-forms', function () {
     return view('laravel-forms');
 })->middleware(['auth', 'verified'])->name('laravel-forms');
+
+Route::get('/laravel-auth', function () {
+    return view('laravel-auth');
+})->middleware(['auth', 'verified'])->name('laravel-auth');
 
 
 

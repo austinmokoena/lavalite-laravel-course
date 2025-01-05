@@ -34,26 +34,32 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-dark" href="{{ route('laravel-routes-controllers') }}">
+          <a class="nav-link  text-dark" href="{{ route('laravel-routes-controllers') }}">
             <i class="material-symbols-rounded opacity-5">view_in_ar</i>
             <span class="nav-link-text ms-1">Routes and Controllers</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active text-dark" href="{{ route('laravel-blade') }}">
+          <a class="nav-link  text-dark" href="{{ route('laravel-blade') }}">
             <i class="material-symbols-rounded opacity-5">view_in_ar</i>
             <span class="nav-link-text ms-1">Blade Templating</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-dark" href="{{ route('laravel-database') }}">
+          <a class="nav-link  text-dark" href="{{ route('laravel-database') }}">
             <i class="material-symbols-rounded opacity-5">view_in_ar</i>
             <span class="nav-link-text ms-1">Database Integration</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-dark" href="{{ route('laravel-forms') }}">
+          <a class="nav-link  text-dark" href="{{ route('laravel-auth') }}">
+            <i class="material-symbols-rounded opacity-5">view_in_ar</i>
+            <span class="nav-link-text ms-1">Authentication</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-dark" href="{{ route('laravel-forms') }}">
             <i class="material-symbols-rounded opacity-5">view_in_ar</i>
             <span class="nav-link-text ms-1">Laravel Forms</span>
           </a>

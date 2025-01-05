@@ -21,6 +21,35 @@
 
         <h4>1. Introduction to Blade</h4>
         <p>Blade is Laravel’s simple yet powerful templating engine. It allows you to combine HTML with PHP code in your views, enabling you to create dynamic web pages efficiently.</p>
+        <p>In the past, most PHP applications rendered HTML to the browser using simple HTML templates interspersed with PHP echo statements which render data that was retrieved from a database during the request:</p>
+        @php
+    $phpCode1 = <<<CODE
+<div>
+    <?php foreach (\$users as \$user): ?>
+        Hello, <?php echo \$user->name; ?> <br/>
+    <?php endforeach; ?>
+</div>
+CODE;
+@endphp
+
+<x-code-snippet language="php" :code="$phpCode1" />
+
+        <p>In Laravel, this approach to rendering HTML can still be achieved using views and Blade. 
+          Blade is an extremely light-weight templating language that provides convenient, 
+          short syntax for displaying data, iterating over data, and more:</p>
+          
+          @php
+    $phpCode1 = <<<CODE
+<div>
+    @foreach (\$users as \$user)
+        Hello, {{ \$user->name }} <br/>
+    @endforeach
+</div>
+CODE;
+@endphp
+
+<x-code-snippet language="php" :code="$phpCode1" />
+
 
         <p><b>Advantages of Blade:</b></p>
         <ul>
